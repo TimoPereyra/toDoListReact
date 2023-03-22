@@ -37,9 +37,16 @@ function TodoList(){
 
         
         const copyTask = [...task];
+
         copyTask[index].completed = !copyTask[index].completed;
         setTasks(copyTask);
-        setCount(count-1);
+        if(copyTask[index].completed==false){
+            setCount(count+1)
+        }else{
+            if (count != 0)setCount(count-1);
+        }
+        
+        
     }
     
     
